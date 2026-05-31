@@ -1,0 +1,18 @@
+# Core
+torch>=2.2
+numpy>=1.26
+Pillow>=10.0
+scipy>=1.11
+PyYAML>=6.0
+tqdm>=4.66
+requests>=2.31
+
+# Metrics
+scikit-image>=0.22
+flip-evaluator>=1.4
+lpips>=0.1.4
+# Install CPU torchvision from PyTorch index (must match torch build):
+#   pip install torchvision --index-url https://download.pytorch.org/whl/cpu
+
+# Dev / tests
+pytest>=8.0

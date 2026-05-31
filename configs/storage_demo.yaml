@@ -1,0 +1,30 @@
+# Storage-demo config: higher texture resolution, fixed compact grid.
+# NTBC model size is set by the grid/MLP config (finest=512), NOT by texture
+# resolution — BC storage scales with H*W*layers (paper's win regime).
+material_dir: data/materials/MetalPlates013
+output_dir: results
+resolution: 1024
+iters: 10000
+blocks_per_iter: 512
+learning_rate: 0.01
+qat_start_frac: 0.8
+color_loss_weight: 1.0
+aux_color_loss_weight: 0.1
+aux_endpoint_loss_weight: 0.1
+seed: 0
+log_every: 500
+device: auto
+
+model:
+  mlp_hidden: 64
+  mlp_layers: 3
+  color_grid:
+    n_levels: 6
+    coarsest: 16
+    finest: 512
+    n_features: 2
+  endpoint_grid:
+    n_levels: 5
+    coarsest: 8
+    finest: 128
+    n_features: 2
